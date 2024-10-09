@@ -29,9 +29,6 @@ def bot_loop():
         if "JOIN" in response and channel in response:
             nick = response.split("!")[0][1:] 
             send_private_message(nick, "Hello there! I am OsintCorpBot, an open-source IRC bot!")
-        if f"PRIVMSG {botnick} :!excaliboar" in response:
-            user = response.split("!")[0][1:]
-            send_private_message(user, "HF-123")
         if not any(cmd in response for cmd in ['372', '376', '401', '421']):
             print(response)
 if __name__ == "__main__":
